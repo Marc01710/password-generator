@@ -9,8 +9,8 @@
 
 ## Installation
 ![deployed site](<./images/deployed site screenshot.png>)
-- Link to deployed website: 
-- Link to github repository: 
+- Link to deployed website: https://marc01710.github.io/password-generator/
+- Link to github repository: https://github.com/Marc01710/password-generator
 
 ## Usage
 
