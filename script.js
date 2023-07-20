@@ -5,18 +5,27 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = lowerCase.toUpperCase().split("");
 var numbers = "1234567890";
 var emptyArray = [];
+var returnValue;
 
 
 
 function generatePassword() {
   var passwordLength = prompt("Enter password length between 8 and 128 characters.");
   passwordLength = parseInt(passwordLength, 10);
-  emptyArray = [];
   // console.log(passwordLength);
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a valid password length.");
     generatePassword();
-  }
+  } else {
+    characters();
+    returnValue = randomize(passwordLength, emptyArray);
+    return returnValue;
+  };
+  
+};
+
+function characters() {
+  emptyArray = [];
   if (confirm("Include special characters?")) {
     emptyArray = emptyArray.concat(specialCharacters);
   };
@@ -29,11 +38,6 @@ function generatePassword() {
   if (confirm("Include numbers?")) {
     emptyArray = emptyArray.concat(numbers.split(""));
   };
-  // console.log(emptyArray);
-  randomize(passwordLength, emptyArray);
-  return;
-
- 
 };
 
 
@@ -42,11 +46,9 @@ function randomize(passwordLength, emptyArray) {
   var returnValue = "";
   for (var i = 0; i < passwordLength; i++) {
     returnValue += emptyArray[Math.floor(Math.random() * emptyArray.length)];
-    };
-    // console.log(returnValue);
-    // console.log(passwordLength);
-    // console.log(emptyArray);
-    return returnValue;
+  };
+  alert("Your password has been generated!");
+  return returnValue;
 };
 
 
